@@ -34,10 +34,10 @@ CREATE TABLE empleados(
 
 CREATE TABLE email(
 	id_email INT AUTO_INCREMENT NOT NULL UNIQUE,
-    id_proveedor INT NOT NULL,
-    id_cliente INT NOT NULL,
-    id_empleado INT NOT NULL,
-    id_vendedor INT NOT NULL,
+    id_proveedor INT ,
+    id_cliente INT ,
+    id_empleado INT ,
+    id_vendedor INT ,
     email VARCHAR(200) NOT NULL,
     PRIMARY KEY (id_email),
     FOREIGN KEY (id_proveedor) REFERENCES proveedores(id_proveedor),
@@ -48,10 +48,10 @@ CREATE TABLE email(
 
 CREATE TABLE direcciones(
 	id_direccion INT AUTO_INCREMENT NOT NULL UNIQUE,
-    id_proveedor INT NOT NULL,
-    id_cliente INT NOT NULL,
-    id_empleado INT NOT NULL,
-    id_vendedor INT NOT NULL,
+    id_proveedor INT,
+    id_cliente INT ,
+    id_empleado INT ,
+    id_vendedor INT ,
     localidad VARCHAR(50) NOT NULL,
     direccion VARCHAR(50) NOT NULL,
     altura INT NOT NULL,
@@ -64,10 +64,10 @@ CREATE TABLE direcciones(
 
 CREATE TABLE telefonos(
 	id_telefonos INT AUTO_INCREMENT NOT NULL UNIQUE,
-    id_proveedor INT NOT NULL,
-    id_cliente INT NOT NULL,
-    id_empleado INT NOT NULL,
-    id_vendedor INT NOT NULL,
+    id_proveedor INT ,
+    id_cliente INT ,
+    id_empleado INT ,
+    id_vendedor INT ,
     telefono1 INT NOT NULL,
     telefono2 INT DEFAULT 0,
     PRIMARY KEY (id_telefonos),
@@ -86,7 +86,7 @@ CREATE TABLE productos(
 );
 
 CREATE TABLE ordencompra_info(
-	id_ordencomprainfo INT NOT NULL,
+	id_ordencomprainfo INT AUTO_INCREMENT NOT NULL,
     id_producto INT NOT NULL,
     cantidad INT NOT NULL,
     subtotal DECIMAL(12,2) NOT NULL,
@@ -102,7 +102,6 @@ CREATE TABLE ordencompra(
 	id_ordencompra INT AUTO_INCREMENT NOT NULL UNIQUE,
     id_cliente INT NOT NULL,
     id_ordencomprainfo INT NOT NULL,
-    total DECIMAL(12,2) NOT NULL,
     PRIMARY KEY (id_ordencompra),
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
     FOREIGN KEY (id_ordencomprainfo) REFERENCES ordencompra_info(id_ordencomprainfo)
@@ -128,7 +127,7 @@ CREATE TABLE sueldo_empleados (
 	id_sueldo INT AUTO_INCREMENT NOT NULL UNIQUE,
     id_empleado INT NOT NULL,
 	id_cobros INT NOT NULL,
-    mes DATE NOT NULL,
+    mes VARCHAR(30) NOT NULL,
     sueldo DECIMAL(12,2) NOT NULL,
     PRIMARY KEY (id_sueldo),
     FOREIGN KEY (id_empleado) REFERENCES empleados(id_empleado),
