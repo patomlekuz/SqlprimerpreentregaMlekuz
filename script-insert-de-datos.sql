@@ -95,14 +95,16 @@ VALUES
 	(null,2,20,20000,4200,24200,current_date(),current_date()+90),
     (null,5,10,100000,21000,121000,current_date(),current_date()+90),
     (null,3,100,250000,52500,325000,current_date(),current_date()+90),
-    (null,1,5,3450,724,4174,current_date(),current_date()+90);
+    (null,1,5,3450,724,4174,"2022-12-01","2022-03-01"),
+    (null,5,2,16000,3360, 19360,"2023-03-01","2023-06-01");
     
 INSERT INTO ordencompra
 VALUES
 	(null,1,3),
     (null,3,1),
     (null,2,4),
-    (null,4,2);
+    (null,4,2),
+    (null,4,5);
     
 INSERT INTO cobros
 VALUES

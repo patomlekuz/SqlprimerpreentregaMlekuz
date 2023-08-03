@@ -92,8 +92,8 @@ CREATE TABLE ordencompra_info(
     subtotal DECIMAL(12,2) NOT NULL,
     iva DECIMAL(12,2) NOT NULL,
     total DECIMAL(12,2) NOT NULL,
-    fecha DATETIME NOT NULL,
-    fecha_vencimiento DATETIME NOT NULL,
+    fecha DATE NOT NULL,
+    fecha_vencimiento DATE NOT NULL,
 	PRIMARY KEY (id_ordencomprainfo),
 	FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
